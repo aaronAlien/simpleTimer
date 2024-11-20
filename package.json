@@ -1,8 +1,11 @@
 {
-  "name": "nodetimer",
+  "name": "aaronalien-timer",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "aaronalien-timer": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
