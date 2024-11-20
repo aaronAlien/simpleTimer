@@ -10,7 +10,7 @@ const rl = readline.createInterface({
 let currentInterval;
 
 function startTimer(duration, taskType, reminder = "") {
-  const total = duration * 60 * 1000; // depending on user input
+  const total = duration * 60 * 1000; 
   const end = Date.now() + total;
 
   // Start interval
@@ -20,7 +20,8 @@ function startTimer(duration, taskType, reminder = "") {
     if (timeRemaining <= 0) {
       clearInterval(currentInterval); // Stop the timer
 
-      // Handle task-specific transitions
+      // tasks
+
       if (taskType === "work") {
         console.log("\nWork session complete! \nTake a break. :) \n");
         rl.question(
@@ -53,10 +54,10 @@ function startTimer(duration, taskType, reminder = "") {
     "\nTimer started!\n...\n\nType 'MAIN' to cancel.\nType 'CHECK' to see time remaining."
   );
 
-  // Prevent duplicate listeners
+  // duplicates
   rl.removeAllListeners("line");
 
-  // cancel and time remaining check
+  // cancel and time remaining 
   rl.on("line", (input) => {
     const choice = input.toLowerCase();
     const timeRemaining = end - Date.now();
